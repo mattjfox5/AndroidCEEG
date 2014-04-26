@@ -3,6 +3,8 @@ package com.matthew.ceeg;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,19 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
-public class S2Activity extends ActionBarActivity {
+public class MainActivityWithDisclaimer extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_s2);
+        setContentView(R.layout.fragment_disclaimer);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
+       
         }
-    }
+
 
 
     @Override
@@ -46,20 +45,13 @@ public class S2Activity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
+   public void FullText (View view){
+	   Intent i = new Intent(android.content.Intent.ACTION_VIEW,Uri.parse("http://www.google.com") );
+	   startActivity(i);
+   }
 
-        public PlaceholderFragment() {
+    
         }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_s2, container, false);
-            return rootView;
-        }
-    }
 
-}
+
