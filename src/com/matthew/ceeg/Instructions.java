@@ -3,32 +3,36 @@ package com.matthew.ceeg;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.os.Build;
 
-public class SettingsActivity extends ActionBarActivity {
-
+public class Instructions extends ActionBarActivity implements OnClickListener{
+	Button btn;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_s2);
+		setContentView(R.layout.fragment_instructions);
+		btn=(Button) findViewById (R.id.Continue01);
+		btn.setOnClickListener(this);
+	
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+
+	
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.settings, menu);
+		getMenuInflater().inflate(R.menu.instructions, menu);
 		return true;
 	}
 
@@ -52,13 +56,13 @@ public class SettingsActivity extends ActionBarActivity {
 		public PlaceholderFragment() {
 		}
 
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_s2,
-					container, false);
-			return rootView;
-		}
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Intent myintent = new Intent (v.getContext(), SettingsActivity.class);
+		startActivity(myintent);
 	}
 
 }
