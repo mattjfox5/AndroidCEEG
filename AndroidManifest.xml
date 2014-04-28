@@ -23,12 +23,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.matthew.ceeg.Settings"
+            android:name="com.matthew.ceeg.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
             android:name="com.matthew.ceeg.SesitivitySpecificity"
             android:label="@string/title_activity_disclaimer" >
+        </activity>
+        <activity
+            android:name="com.matthew.ceeg.Instructions"
+            android:label="@string/title_activity_instructions" >
+            
         </activity>
     </application>
 
