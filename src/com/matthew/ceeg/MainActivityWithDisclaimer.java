@@ -1,5 +1,6 @@
 package com.matthew.ceeg;
 
+import android.R;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -10,35 +11,20 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.os.Build;
 
-public class MainActivityWithDisclaimer extends ActionBarActivity implements OnClickListener{	
-	
-	
-	
-	Button btn;
-	@Override
+public class MainActivityWithDisclaimer extends ActionBarActivity {
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_disclaimer);
-        btn=(Button) findViewById (R.id.agree);
-        btn.setOnClickListener(this);
-              
-        
-       /* Button agree = (Button)findViewById (R.id.agree);
-        agree.setOnClickListener (new OnClickListener(){
-	
-        		public void onClick(View view) {
-        			
-        			Intent myIntent = new Intent (view.getContext(), Instructions.class);
-        			startActivityForResult (myIntent, 0);
-        		}
-	});
-	*/
-	}
+
+       
+        }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,6 +33,7 @@ public class MainActivityWithDisclaimer extends ActionBarActivity implements OnC
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -64,22 +51,8 @@ public class MainActivityWithDisclaimer extends ActionBarActivity implements OnC
 	   startActivity(i);
    }
 
-@Override
-public void onClick(View v) {
-	// TODO Auto-generated method stub
-	Intent myintent = new Intent (this, Instructions.class);
-	startActivity (myintent);
-}
-
-
-
-
-		
-	}
-
-
     
-        
+        }
 
 
 
